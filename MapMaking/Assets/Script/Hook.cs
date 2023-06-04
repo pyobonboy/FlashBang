@@ -39,7 +39,7 @@ public class Hook : MonoBehaviour
 
         if (isHookActive && !isLineMax && !isAttach)
         {
-            hook.Translate(mousedir.normalized * Time.deltaTime * 60);
+            hook.Translate(mousedir.normalized * Time.deltaTime * 80);
 
             if(Vector2.Distance(transform.position, hook.position) > 10)
             {
@@ -47,7 +47,7 @@ public class Hook : MonoBehaviour
             }
         }else if(isHookActive && isLineMax && !isAttach)
         {
-            hook.position = Vector2.MoveTowards(hook.position, transform.position, Time.deltaTime * 40);
+            hook.position = Vector2.MoveTowards(hook.position, transform.position, Time.deltaTime * 80);
             if(Vector2.Distance(transform.position, hook.position) < 0.1f)
             {
                 isHookActive = false;
